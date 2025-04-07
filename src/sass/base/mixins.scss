@@ -23,3 +23,27 @@
     font-weight: 400;
     text-transform: uppercase;
 }
+
+@mixin angle-decoration {
+    &::before {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-top: 1px solid $dark;
+        border-left: 1px solid $dark;
+        top: 0;
+        left: 0;
+    }
+}
+
+@mixin btn-desktop {
+    &:active {
+        outline: 1px solid $ceramic;
+        order: 1px solid $ceramic;
+    }
+    &:hover {
+        color: $ceramic;
+        border: 1px solid $ceramic;
+    }
+}
