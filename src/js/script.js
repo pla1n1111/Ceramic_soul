@@ -1,5 +1,6 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
+import JustValidate from 'just-validate';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -64,4 +65,70 @@ try {
 	contents.forEach((c, i) => (c.style.display = i === 0 ? "flex" : "none"));
 } catch (e) {}
 
-// Обратите внимание, что значение block (в двух местах) можно спокойно поменять на flex, если вам это необходимо
+try {
+    const gitFormValidator = new JustValidate('.git__form');
+
+    gitFormValidator
+        .addField('#name', [
+            {
+                rule: 'required',
+                errorMessage: 'Please fill the name'
+            },
+            {
+                rule: 'minLength',
+                value: 2,
+                errorMessage: ''
+            },
+        ])
+        .addField('#git__email', [
+            {
+                rule: 'required',   
+            },
+            {
+                rule: 'email',
+            },
+        ])
+        .addField('#question', [
+            {
+                rule: 'required',
+            },
+            {
+                rule: 'minLength',
+                value: 5
+            },
+        ], {
+            errorsContainer: document.querySelector('#question').parentElement.querySelector('.error-message')
+        })
+        .addField('#checkbox', [
+            {
+                rule: 'required',
+            },
+        ], {
+            errorsContainer: document.querySelector('#checkbox').parentElement.parentElement.querySelector('.checkbox-error-message')
+        })
+} catch(e) {
+
+}
+
+try {
+    const footerFormValidator = new JustValidate('.footer__form');
+
+    footerFormValidator
+        .addField('#footer__email', [
+            {
+                rule: 'required',   
+            },
+            {
+                rule: 'email',
+            },
+        ])
+        .addField('#footer__checkbox', [
+            {
+                rule: 'required',
+            },
+        ], {
+            errorsContainer: document.querySelector('#checkbox').parentElement.parentElement.querySelector('.checkbox-error-message')
+        })
+} catch(e) {
+
+}

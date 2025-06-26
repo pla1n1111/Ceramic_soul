@@ -96,16 +96,20 @@
                             </div>
                             <div class="git__input-block">
                                 <label class="git__label" for="email">Email</label>
-                                <input required class="git__input" type="email" id="email" name="email"
+                                <input required class="git__input" type="email" id="git__email" name="email"
                                     placeholder="Email">
                             </div>
                         </fieldset>
                         <label class="git__label" for="question">Your question</label>
                         <textarea required placeholder="Question" class="git__textarea" name="question"
                             id="question"></textarea>
+                        <div class="error-message"></div>
+
                         <label class="git__label git__check-block" for="checkbox">
                             <input required class="git__checkbox" type="checkbox" id="checkbox">I agree with the
                             <a href="#">terms</a></label>
+                        <div class="checkbox-error-message"></div>
+
                         <button class="btn-send git__btn">send request</button>
                         <img src="/src/img/form/vase.png" alt="vase" class="git__abs-img">
                     </form>
@@ -132,7 +136,7 @@
                 <form action="#" class="footer__form">
                     <h4 class="title-h4 footer__title">newsletter</h4>
                     <p class="footer__text">Keep up to date with news and promotions</p>
-                    <input required class="footer__input" type="email" id="email" name="email"
+                    <input required class="footer__input" type="email" id="footer__email" name="email"
                         placeholder="Enter your e-mail">
                     <label class="footer__label footer__check-block" for="footer__checkbox">
                         <input required class="footer__checkbox" type="checkbox" id="footer__checkbox">I agree with the

@@ -3,6 +3,15 @@
 .footer {
     background-color: $dark;
     padding: 50px 0 50px 0;
+
+    .just-validate-error-field.footer__input {
+            border-bottom: 1px solid $ui-error;
+            outline: transparent;
+            &::placeholder {
+                color: $ui-error;
+            }
+        }
+
     &__title {
         text-align: start;
     }
@@ -21,6 +30,7 @@
         min-width: 293px;
         min-height: 32px;
         padding: 0 10px 15px 0;
+        color: $ui-active;
         &::placeholder {
             font-weight: 400;
             font-size: 14px;

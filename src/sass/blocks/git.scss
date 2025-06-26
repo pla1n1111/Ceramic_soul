@@ -3,6 +3,12 @@
 .git {
     position: relative;
     padding-top: 60px;
+
+    .just-validate-error-field {
+        border: none;
+        outline: 1px solid $ui-error;
+    }
+
     &__img {
         display: none;
     }
